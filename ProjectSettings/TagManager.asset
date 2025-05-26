@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - DroneAgent
+  - Drone
   layers:
   - Default
   - TransparentFX
@@ -36,7 +38,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Drone
   m_SortingLayers:
   - name: Default
     uniqueID: 0
