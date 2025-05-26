@@ -14,7 +14,7 @@ namespace DroneSim
 
         public UnityEvent OnResourceGet;
 
-        bool[] _busy;     // slot map
+        bool[] _busy;     
         int _store;
 
         void Awake()
@@ -31,8 +31,8 @@ namespace DroneSim
                 if (!_busy[i])
                 {
                     Reserve(i);
-                    SlotPos(i, out point, out id);   // ← заполняем out-переменные
-                    return true;                     // ← ЭТОТ return пропущен
+                    SlotPos(i, out point, out id);  
+                    return true;                     
                 }
 
             // Все заняты — возвращаем центр
