@@ -6,13 +6,11 @@ namespace DroneSim
 {
     public class UIController : MonoBehaviour
     {
-        [Header("UI")]
-        [SerializeField] Slider speedSlider;
-        [SerializeField] Slider amountSlider;
-        [SerializeField] TMP_InputField spawnInput;
-        [SerializeField] Toggle pathToggle;
+        [SerializeField] Slider speedSl;
+        [SerializeField] Slider amountSl;
+        [SerializeField] TMP_InputField spawnIn;
+        [SerializeField] Toggle pathTg;
 
-        [Header("Counters")]
         [SerializeField] TextMeshProUGUI txtA;
         [SerializeField] TextMeshProUGUI txtB;
         [SerializeField] BaseHub hubA;
@@ -20,14 +18,13 @@ namespace DroneSim
 
         void Start()
         {
-            speedSlider.onValueChanged.AddListener(v => SimulationManager.Instance.SetSpeed(v));
-            amountSlider.onValueChanged.AddListener(v => SimulationManager.Instance.SetAmount(Mathf.RoundToInt(v)));
-            spawnInput.onEndEdit.AddListener(s =>
-            {
+            speedSl.onValueChanged.AddListener(v => SimulationManager.Instance.SetSpeed(v));
+            amountSl.onValueChanged.AddListener(v => SimulationManager.Instance.SetAmount(Mathf.RoundToInt(v)));
+            spawnIn.onEndEdit.AddListener(s => {
                 if (float.TryParse(s, out var f))
                     SimulationManager.Instance.Spawner.SetInterval(f);
             });
-            pathToggle.onValueChanged.AddListener(DroneAgent.ShowPaths);
+            pathTg.onValueChanged.AddListener(DroneAgent.ShowPaths);
         }
 
         void Update()

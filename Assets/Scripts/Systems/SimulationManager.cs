@@ -7,7 +7,7 @@ namespace DroneSim
     {
         public static SimulationManager Instance { get; private set; }
 
-        [Header("Scene")]
+        [Header("Scene refs")]
         public ResourceSpawner Spawner;
         public DroneAgent dronePrefab;
         public BaseHub baseA;
@@ -27,9 +27,9 @@ namespace DroneSim
             SpawnBatch(baseB, dronesPerBase);
         }
 
-        void SpawnBatch(BaseHub hub, int count)
+        void SpawnBatch(BaseHub hub, int n)
         {
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < n; i++)
             {
                 var d = Instantiate(dronePrefab, hub.transform.position, Quaternion.identity);
                 d.Init(hub, droneSpeed);
@@ -37,7 +37,7 @@ namespace DroneSim
             }
         }
 
-        // ---------- UI hooks ----------
+        // ----- UI hooks -----
         public void SetSpeed(float v)
         {
             droneSpeed = v;
@@ -49,14 +49,12 @@ namespace DroneSim
             perBase = Mathf.Clamp(perBase, 1, 10);
             if (perBase == dronesPerBase) return;
             dronesPerBase = perBase;
-
-            Adjust(baseA, perBase);
-            Adjust(baseB, perBase);
+            Adjust(baseA, perBase); Adjust(baseB, perBase);
         }
 
         void Adjust(BaseHub hub, int target)
         {
-            var list = _drones.FindAll(d => d.GetComponent<DroneAgent>().Home == hub);
+            var list = _drones.FindAll(d => d.Home == hub);
             if (list.Count < target)
                 SpawnBatch(hub, target - list.Count);
             else

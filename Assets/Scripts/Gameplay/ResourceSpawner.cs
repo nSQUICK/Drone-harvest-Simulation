@@ -8,16 +8,13 @@ namespace DroneSim
     {
         [SerializeField] ResourceNode prefab;
         [SerializeField] Vector2 area = new(10, 10);
-        [SerializeField, Range(.2f, 10f)] float interval = 3f;
+        [SerializeField, Range(.2f, 10)] float interval = 3f;
         [SerializeField, Range(1, 50)] int maxNodes = 25;
 
         readonly List<ResourceNode> _pool = new();
         public IReadOnlyList<ResourceNode> Pool => _pool;
 
-        void Start()
-        {
-            InvokeRepeating(nameof(Spawn), 0, interval);
-        }
+        void Start() => InvokeRepeating(nameof(Spawn), 0, interval);
 
         public void SetInterval(float sec)
         {

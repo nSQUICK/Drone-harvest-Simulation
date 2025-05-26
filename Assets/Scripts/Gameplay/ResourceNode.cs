@@ -5,7 +5,7 @@ namespace DroneSim
 {
     public class ResourceNode : MonoBehaviour
     {
-        int _state;                      // 0 free - 1 reserved - 2 taken
+        int _state;                       // 0 free | 1 reserved | 2 taken
 
         public bool TryReserve() => Interlocked.CompareExchange(ref _state, 1, 0) == 0;
         public void Free() => _state = 0;

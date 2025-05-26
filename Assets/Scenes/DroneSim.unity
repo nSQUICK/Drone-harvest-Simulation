@@ -433,7 +433,7 @@ MonoBehaviour:
   baseA: {fileID: 1882270578}
   baseB: {fileID: 2086627306}
   dronesPerBase: 3
-  droneSpeed: 1
+  droneSpeed: 4
 --- !u!4 &415546732
 Transform:
   m_ObjectHideFlags: 0
@@ -1679,6 +1679,14 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 101439678980705462, guid: a4bafb3a14e59fc45a41d2c2d9c89ae1, type: 3}
+      propertyPath: slots
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 101439678980705462, guid: a4bafb3a14e59fc45a41d2c2d9c89ae1, type: 3}
+      propertyPath: radius
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 101439678980705462, guid: a4bafb3a14e59fc45a41d2c2d9c89ae1, type: 3}
       propertyPath: color.g
       value: 0.13080311
       objectReference: {fileID: 0}
@@ -1760,7 +1768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6510276907324970798, guid: a4bafb3a14e59fc45a41d2c2d9c89ae1, type: 3}
       propertyPath: m_Radius
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6510276907324970798, guid: a4bafb3a14e59fc45a41d2c2d9c89ae1, type: 3}
       propertyPath: m_IsTrigger
@@ -2057,10 +2065,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472a13b5ea2100a4487dc86572facc01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedSlider: {fileID: 1275811279}
-  amountSlider: {fileID: 2076381607}
-  spawnInput: {fileID: 2032077794}
-  pathToggle: {fileID: 1511470293}
+  speedSl: {fileID: 1275811279}
+  amountSl: {fileID: 2076381607}
+  spawnIn: {fileID: 2032077794}
+  pathTg: {fileID: 1511470293}
   txtA: {fileID: 1779541108}
   txtB: {fileID: 1204132676}
   hubA: {fileID: 1882270578}
@@ -3044,7 +3052,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 347575462}
   m_Direction: 0
   m_MinValue: 3
-  m_MaxValue: 10
+  m_MaxValue: 5
   m_WholeNumbers: 1
   m_Value: 3
   m_OnValueChanged:
@@ -3162,7 +3170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 101439678980705462, guid: a4bafb3a14e59fc45a41d2c2d9c89ae1, type: 3}
       propertyPath: slots
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 101439678980705462, guid: a4bafb3a14e59fc45a41d2c2d9c89ae1, type: 3}
       propertyPath: radius
@@ -3254,7 +3262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6510276907324970798, guid: a4bafb3a14e59fc45a41d2c2d9c89ae1, type: 3}
       propertyPath: m_Radius
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}

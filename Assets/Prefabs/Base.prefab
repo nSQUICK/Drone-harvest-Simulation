@@ -4929,25 +4929,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc4cca533144324aa45acfe99a6d343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slotMarkerPrefab: {fileID: 2138441208215976440, guid: 5dcf998ed91127542ac02d7f1cf21358, type: 3}
   faction: Blue
   color: {r: 0, g: 1, b: 1, a: 1}
   radius: 2
   slots: 10
-  OnResourceGet:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8473083357436295732}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!208 &-6731489368405508905
 NavMeshObstacle:
   m_ObjectHideFlags: 0
